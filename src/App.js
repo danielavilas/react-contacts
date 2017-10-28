@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import ListContacts from './ListContacts'
-import CreateContact from './CreateContact'
+import ListContacts from './components/ListContacts'
+import CreateContact from './components/CreateContact'
 import * as ContactsAPI from './utils/ContactsAPI'
 
 class App extends Component {
