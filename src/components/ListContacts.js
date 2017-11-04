@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
+import Contact from './Contact'
 
 class ListContacts extends Component {
   static propTypes = {
@@ -65,17 +66,15 @@ class ListContacts extends Component {
 
         <ol className='contact-list'>
           {showingContacts.map(contact => (
-            <li key={contact.id} className='contact-list-item'>
-              <div className='contact-avatar'style={{
-                backgroundImage: `url(${contact.avatarURL})`
-              }} />
-              <div className='contact-details'>
-                <p>{contact.name}</p>
-                <p>{contact.email}</p>
-              </div>
-              <button onClick={() => onDeleteContact(contact)} className='contact-remove'>
-                Remove
-              </button>
+            <li key={contact.id}>
+              <Contact
+                name={contact.name}
+                email={contact.email}
+                avatarURL={contact.avatarURL}>
+                <button onClick={() => onDeleteContact(contact)} className='contact-remove'>
+                  Remove
+                </button>
+              </Contact>
             </li>
           ))}
         </ol>
